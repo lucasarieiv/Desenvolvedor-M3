@@ -1,1 +1,72 @@
 @import "reset";
+
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1176px;
+
+  .header-filter {
+    margin: 54px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      font-size: 2rem;
+      color: var(--gray-700);
+    }
+
+    .select-order {
+      cursor: pointer;
+      position: relative;
+
+      .select-box {
+        box-sizing: border-box;
+        padding: 10px;
+        border: 1px solid var(--gray-300);
+
+        .select-title {
+          display: flex;
+          font-size: 16px;
+          color: var(--black);
+          -webkit-user-select: none; /* Safari */
+          -ms-user-select: none; /* IE 10 and IE 11 */
+          user-select: none; /* Standard syntax */
+          
+          .arrow {
+            margin-left: 10px;
+          }
+        }
+
+        .select-options {
+          display: none;
+          visibility: hidden;
+          background-color: #fff;
+          box-sizing: border-box;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 100%;
+          border: 1px solid var(--gray-300);
+          
+          &.-active {
+            display: block;
+            visibility: visible;
+          }
+
+          ul {
+            .option {
+              padding: 10px 10px;
+              transition: background 200ms;
+              
+              &.-active,
+              &:hover {
+                background: var(--blue);
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

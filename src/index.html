@@ -5,15 +5,112 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="footer.css" />
 </head>
 
 <body>
 
+  <header class="header">
+    <div class="header-content">
+      <div>
+        <img src="/img/logo-m3.png" alt="Logo m3">
+      </div>
+
+      <div class="shop">
+        <div class="badge">1</div>
+        <img src="/img/shop.png" alt="Carrinho">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="header-filter">
+      <h1 class="title">Blusas</h1>
+
+      <div class="select-order">
+
+        <div class="select-box">
+          <div class="select-title">
+            <p>Ordenar por:</p>
+            
+            <div class="arrow">
+              <img src="img/arrow.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <div class="select-options ">
+            <ul>
+              <li class="option" data-value="recent">Mas recentes</li>
+              <li class="option" data-value="lowestPrice">Menor preço</li>
+              <li class="option" data-value="highestPrice">Maior</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <aside>
+      <div class="colors">
+        <h2>Cores</h2>
+
+        <input type="checkbox" data-colors="amarelo" id="amarelo">
+        <label for="amarelo">Amarelo</label>
+
+        <input type="checkbox" data-colors="azul" id="azul">
+        <label for="azul">Azul</label>
+
+        <input type="checkbox" data-colors="branco" id="branco">
+        <label for="branco">Branco</label>
+
+        <input type="checkbox" data-colors="cinza" id="cinza">
+        <label for="cinza">Cinza</label>
+
+        <input type="checkbox" data-colors="laranja" id="laranja">
+        <label for="laranja">Laranja</label>
+
+        <a>Ver todas as cores</a>
+
+        <!-- <input type="checkbox" data-colors="verde" id="verde">
+        <label for="verde">Verde</label>
+
+        <input type="checkbox" data-colors="vermelho" id="vermelho">
+        <label for="vermelho">Vermelho</label>
+
+        <input type="checkbox" data-colors="preto" id="preto">
+        <label for="preto">Preto</label>
+
+        <input type="checkbox" data-colors="rosa" id="rosa">
+        <label for="rosa">Rosa</label>
+
+        <input type="checkbox" data-colors="vinho" id="vinho">
+        <label for="vinho">Vinho</label> -->
+      </div>
+
+      <div class="sizes">
+        <h2>Tamanhos</h2>
+
+        
+      </div>
+    </aside>
+    
+    <section>
+
+    </section>
+
+  </main>
+
+  <footer class="m3-footer">
+    <p>M3: Implantação de E-commerce VTEX</p>
+  </footer>
+
+  <script src="bundle.js"></script>
 </body>
-<h1>Desafio m3</h1>
-
-<script src="bundle.js"></script>
-
 </html>

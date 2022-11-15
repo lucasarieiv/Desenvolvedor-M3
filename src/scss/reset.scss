@@ -3,6 +3,15 @@
    License: none (public domain)
 */
 
+:root {
+  --black: #000;
+  --gray-700: #333333;
+  --gray-500: #666666;
+  --gray-300: rgba(0, 0, 0, 0.5);
+
+  --blue: #00C0EE;
+}
+
 html,
 body,
 div,
@@ -89,6 +98,7 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
+  font-family: 'Open Sans', sans-serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
