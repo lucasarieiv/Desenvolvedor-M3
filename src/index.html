@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolvedor M3</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
   <link rel="stylesheet" href="header.css" />
   <link rel="stylesheet" href="footer.css" />
@@ -33,78 +33,256 @@
     <div class="header-filter">
       <h1 class="title">Blusas</h1>
 
-      <div class="select-order">
+      <div class="filter-options">
+        <h2 class="title-filter">Filtrar</h2>
+        
+        <h2 class="title-order">Ordenar</h2>
 
-        <div class="select-box">
-          <div class="select-title">
-            <p>Ordenar por:</p>
-            
-            <div class="arrow">
-              <img src="img/arrow.svg" alt="Arrow">
+        <div class="select-order">
+  
+          <div class="select-box">
+            <div id="order_by" class="select-title">
+              <p id="text_order_by">Ordenar por:</p>
+              
+              <div class="arrow">
+                <img src="img/arrow.svg" alt="Arrow">
+              </div>
+            </div>
+  
+            <div class="select-options">
+              <h2 class="options-title">Ordernar <span>X</span></h2>
+              <ul>
+                <li class="option" data-value="recent">Mas recentes</li>
+                <li class="option" data-value="lowestPrice">Menor preço</li>
+                <li class="option" data-value="highestPrice">Maior preço</li>
+              </ul>
             </div>
           </div>
-
-          <div class="select-options ">
-            <ul>
-              <li class="option" data-value="recent">Mas recentes</li>
-              <li class="option" data-value="lowestPrice">Menor preço</li>
-              <li class="option" data-value="highestPrice">Maior</li>
-            </ul>
-          </div>
         </div>
-
       </div>
 
     </div>
 
-    <aside>
-      <div class="colors">
-        <h2>Cores</h2>
+    <div class="main-content">
+      <aside class="filters-container">
+        <h2 class="filters-title">Filtrar <span class="close close-filters">X</span></h2>
 
-        <input type="checkbox" data-colors="amarelo" id="amarelo">
-        <label for="amarelo">Amarelo</label>
-
-        <input type="checkbox" data-colors="azul" id="azul">
-        <label for="azul">Azul</label>
-
-        <input type="checkbox" data-colors="branco" id="branco">
-        <label for="branco">Branco</label>
-
-        <input type="checkbox" data-colors="cinza" id="cinza">
-        <label for="cinza">Cinza</label>
-
-        <input type="checkbox" data-colors="laranja" id="laranja">
-        <label for="laranja">Laranja</label>
-
-        <a>Ver todas as cores</a>
-
-        <!-- <input type="checkbox" data-colors="verde" id="verde">
-        <label for="verde">Verde</label>
-
-        <input type="checkbox" data-colors="vermelho" id="vermelho">
-        <label for="vermelho">Vermelho</label>
-
-        <input type="checkbox" data-colors="preto" id="preto">
-        <label for="preto">Preto</label>
-
-        <input type="checkbox" data-colors="rosa" id="rosa">
-        <label for="rosa">Rosa</label>
-
-        <input type="checkbox" data-colors="vinho" id="vinho">
-        <label for="vinho">Vinho</label> -->
-      </div>
-
-      <div class="sizes">
-        <h2>Tamanhos</h2>
-
-        
-      </div>
-    </aside>
+        <div class="filters">
+          <h2>Cores <span class="toggle-filters"></span></h2>
+  
+          <div class="colors-container">
+            <label class="container" for="amarelo">
+              <p>Amarelo</p>
+              <input class="colors-filter" type="checkbox" data-colors="amarelo" id="amarelo">
+              <span class="checkmark"></span>
+            </label>
     
-    <section>
+            <label class="container" for="azul">
+              <p>Azul</p>
+              <input class="colors-filter" type="checkbox" data-colors="azul" id="azul">
+              <span class="checkmark"></span>
+            </label>
+    
+            <label class="container" for="branco">
+              <p>Branco</p>
+              <input class="colors-filter" type="checkbox" data-colors="branco" id="branco">
+              <span class="checkmark"></span>
+            </label>
+    
+            <label class="container" for="cinza">
+              <p>Cinza</p>
+              <input class="colors-filter" type="checkbox" data-colors="cinza" id="cinza">
+              <span class="checkmark"></span>
+            </label>
+    
+            <label class="container" for="laranja">
+              <p>Laranja</p>
+              <input class="colors-filter" type="checkbox" data-colors="laranja" id="laranja">
+              <span class="checkmark"></span>
+            </label>
+    
+            <a>Ver todas as cores <img src="img/arrow.svg" alt="Arrow"></a>
+    
+            <!-- <label class="container" for="verde">
+              <p>Verde</p>
+              <input class="colors-filter" type="checkbox" data-colors="verde" id="verde">
+              <span class="checkmark"></span>
+            </label>
+    
+            <label class="container" for="vermelho">
+              <p>Vermelho</p>
+              <input class="colors-filter" type="checkbox" data-colors="vermelho" id="vermelho">
+              <span class="checkmark"></span>
+            </label>
+    
+            <label class="container" for="preto">
+              <p>Preto</p>
+              <input class="colors-filter" type="checkbox" data-colors="preto" id="preto">
+              <span class="checkmark"></span>
+            </label>
+    
+            <label class="container" for="rosa">
+              <p>Rosa</p>
+              <input class="colors-filter" type="checkbox" data-colors="rosa" id="rosa">
+              <span class="checkmark"></span>
+            </label>
+    
+            <label class="container" for="vinho">
+              <p>Vinho</p>
+              <input class="colors-filter" type="checkbox" data-colors="vinho" id="vinho">
+              <span class="checkmark"></span>
+            </label> -->
+          </div>
+  
+        </div>
+  
+        <div class="filters sizes">
+          <h2>Tamanhos <span class="toggle-filters"></span></h2>
+          
+          <div class="size-container ">
+            <div class="size-content size-p">
 
-    </section>
+              <label class="check-container" for="P">
+                <input class="sizes-filter" type="checkbox" data-size="p" id="P">
+                <p class="text-size">P</p>
+                <span class="checkmark"></span>
+              </label>
 
+              <label class="check-container" for="U">
+                <input class="sizes-filter" type="checkbox" data-size="u" id="U">
+                <p class="text-size">U</p>
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="check-container" for="U36">
+                <input class="sizes-filter" type="checkbox" data-size="u" data-value="36" id="U36">
+                <p class="text-size">36</p>
+                <span class="checkmark"></span>
+              </label>
+              
+            </div>
+  
+            <div class="size-content size-m">
+              <label class="check-container" for="M">
+                <input class="sizes-filter" type="checkbox" data-size="m" id="M">
+                <p class="text-size">M</p>
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="check-container" for="M36">
+                <input class="sizes-filter" type="checkbox" data-size="m" data-value="36" id="M36">
+                <p class="text-size">36</p>
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="check-container" for="M38">
+                <input class="sizes-filter" type="checkbox" data-size="m" data-value="38" id="M38">
+                <p class="text-size">38</p>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+  
+            <div class="size-content size-g">
+
+              <label class="check-container" for="G">
+                <input class="sizes-filter" type="checkbox" data-size="g" id="G">
+                <p class="text-size">G</p>
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="check-container" for="G38">
+                <input class="sizes-filter" type="checkbox" data-size="g" data-value="38" id="G38">
+                <p class="text-size">38</p>
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="check-container" for="G40">
+                <input class="sizes-filter" type="checkbox" data-size="g" data-value="40" id="G40">
+                <p class="text-size">40</p>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+  
+            <div class="size-content size-gg">
+              <label class="check-container" for="GG">
+                <input class="sizes-filter" type="checkbox" data-size="u" data-value="gg" id="GG">
+                <p class="text-size">GG</p>
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="check-container" for="GG40">
+                <input class="sizes-filter" type="checkbox" data-size="u" data-value="gg" data-value="40" id="GG40">
+                <p class="text-size">40</p>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+  
+          </div>
+          
+        </div>
+  
+        <div class="filters prices">
+          <h2>Faixa de Preço <span class="toggle-filters"></span></h2>
+  
+          <div class="price-container">
+            <label class="container" for="50">
+              <p>de R$ 0 até R$ 50</p>
+              <input type="checkbox" data-minPrice="0" data-maxPrice="50" id="50">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container" for="150">
+              <p>de R$ 51 até R$ 150</p>
+              <input type="checkbox" data-minPrice="51" data-maxPrice="150" id="150">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container" for="300">
+              <p>de R$ 151 até R$ 300</p>
+              <input type="checkbox" data-minPrice="151" data-maxPrice="300" id="300">
+              <span class="checkmark"></span>
+            </label>
+            
+            <label class="container" for="500">
+              <p>de R$ 301 até R$ 500</p>
+              <input type="checkbox" data-minPrice="151" data-maxPrice="500" id="500">
+              <span class="checkmark"></span>
+            </label>
+            
+            <label class="container" for="500-more">
+              <p>a partir de R$ 500</p>
+              <input type="checkbox" data-minPrice="500" id="500-more">
+              <span class="checkmark"></span>
+            </label>
+            
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <a class="btn btn-primary">Aplicar</a>
+          <a class="btn btn-secondary">Limpar</a>
+        </div>
+      </aside>
+  
+      <section class="shop-container">
+        <div class="cards-content" id="cards-content">
+  
+        <!--
+          <div class="card">
+            <img class="card-image" src="img/img_2.png" alt="CAMISETA MESCLA">
+            <h3 class="card-title">Camiseta Mescla</h3>
+  
+            <strong class="card-price">R$ 28,00</strong>
+            <span class="card-installment">até 3x de R$ 9,33</span>
+            
+            <a class="btn btn-buy">Comprar</a>
+          </div>
+        -->
+
+        </div>
+        <a id="load_more" class="btn btn-primary">Carregar mais</a>
+      </section>
+    </div>
   </main>
 
   <footer class="m3-footer">
