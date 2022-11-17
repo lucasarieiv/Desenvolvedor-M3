@@ -185,6 +185,12 @@
       }
 
       .colors-container {
+        .container {
+          
+          &.-hide {
+            display: none;
+          }
+        }
         a {
           text-decoration: underline;
           font-size: 0.75rem;
@@ -194,6 +200,10 @@
 
           img {
             width: 9px;
+          }
+          
+          &.-hide {
+            display: none;
           }
 
           &:hover {
@@ -298,6 +308,10 @@
         .card {
           width: 195px;
           text-align: center;
+          
+          &.-hide {
+            display: none;
+          }
 
           .card-title {
             text-transform: uppercase;
