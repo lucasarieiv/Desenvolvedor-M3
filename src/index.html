@@ -23,7 +23,7 @@
       </div>
 
       <div class="shop">
-        <div class="badge">1</div>
+        <div class="badge"></div>
         <img src="/img/shop.png" alt="Carrinho">
       </div>
     </div>
@@ -68,7 +68,7 @@
         <h2 class="filters-title">Filtrar <span class="close close-filters">X</span></h2>
 
         <div class="filters">
-          <h2>Cores <span class="toggle-filters"></span></h2>
+          <h2 id="toggle-colors">Cores <span class="toggle-filters"></span></h2>
   
           <div class="colors-container">
             <label class="container" for="amarelo">
@@ -137,9 +137,9 @@
         </div>
   
         <div class="filters sizes">
-          <h2>Tamanhos <span class="toggle-filters"></span></h2>
+          <h2 id="toggle-sizes">Tamanhos <span class="toggle-filters"></span></h2>
           
-          <div class="size-container ">
+          <div class="size-container">
             <div class="size-content size-p">
 
               <label class="check-container" for="P">
@@ -222,7 +222,7 @@
         </div>
   
         <div class="filters prices">
-          <h2>Faixa de Preço <span class="toggle-filters"></span></h2>
+          <h2 id="toggle-prices">Faixa de Preço <span class="toggle-filters"></span></h2>
   
           <div class="price-container">
             <label class="container" for="50">
@@ -259,26 +259,13 @@
         </div>
 
         <div class="btn-group">
-          <a class="btn btn-primary">Aplicar</a>
-          <a class="btn btn-secondary">Limpar</a>
+          <a id="btn_apply" class="btn btn-primary">Aplicar</a>
+          <a id="btn_clean" class="btn btn-secondary">Limpar</a>
         </div>
       </aside>
   
       <section class="shop-container">
         <div class="cards-content" id="cards-content">
-  
-        <!--
-          <div class="card">
-            <img class="card-image" src="img/img_2.png" alt="CAMISETA MESCLA">
-            <h3 class="card-title">Camiseta Mescla</h3>
-  
-            <strong class="card-price">R$ 28,00</strong>
-            <span class="card-installment">até 3x de R$ 9,33</span>
-            
-            <a class="btn btn-buy">Comprar</a>
-          </div>
-        -->
-
         </div>
         <a id="load_more" class="btn btn-primary">Carregar mais</a>
       </section>

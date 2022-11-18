@@ -1,21 +1,54 @@
 const serverurl = process.env.SERVER_API;
 console.log("Dev m3", serverurl);
 
+window.onload = () => {
 let loadedProducts = []
 let productsToRender = []
 let renderedElements = []
 let priceFilter = {}
 let orderBy = '';
 let globalFilteredProducts = []
+let basket = 0;
 
 const cardContainer = document.getElementById('cards-content');
 const loadMoreButton = document.getElementById('load_more');
 const allColorsButton = document.getElementById('all_colors');
 const orderByButton = document.getElementById('order_by');
+
 const filterButton = document.getElementById('btn_filter');
 const orderButton = document.getElementById('btn_order');
+
 const closeFilterButton = document.querySelector('.close-filters');
 const closeOrderButton = document.querySelector('.close-order');
+
+const toggleColors = document.getElementById('toggle-colors');
+const toggleSizes = document.getElementById('toggle-sizes');
+const togglePrices = document.getElementById('toggle-prices');
+
+const cleanButton = document.getElementById('btn_clean');
+
+function toggleArrow(e) {
+  const arrow = e.target.querySelector('.toggle-filters')
+  arrow.classList.toggle('-active');
+}
+
+toggleColors.addEventListener('click', (e) => {
+  const color = document.querySelector('.colors-container');
+  toggleArrow(e);
+  color.classList.toggle('-active');
+})
+
+toggleSizes.addEventListener('click', (e) => {
+  const size = document.querySelector('.size-container');
+  toggleArrow(e);
+  size.classList.toggle('-active')
+})
+
+togglePrices.addEventListener('click', (e) => {
+  const price = document.querySelector('.price-container');
+  toggleArrow(e);
+  price.classList.toggle('-active')
+})
 
 function priceFormat(price) {
   return new Intl.NumberFormat('pt-BR', {
@@ -33,9 +66,25 @@ function displayProducts(products) {
   })
 }
 
-function renderCard({id, image, name, parcelamento, price}) {
+function setBasket() {
+  const badge = document.querySelector('.badge');
+
+  if (basket == 1) {
+    badge.classList.add('-active');
+  }
+
+  badge.textContent = basket
+}
+
+function handleBasket() {
+  basket+= 1;
+  setBasket();
+}
+
+
+function renderCard({image, name, parcelamento, price}) {
   const cardElement = document.createElement('div');
-  const buttonElement = document.createElement('a')
+  const buttonBuy = document.createElement('a')
   const imgElement = document.createElement('img');
   const titleElement = document.createElement('h3');
   const priceElement = document.createElement('strong');
@@ -58,14 +107,16 @@ function renderCard({id, image, name, parcelamento, price}) {
   installmentElement.classList.add('card-installment');
   installmentElement.textContent = `até ${parcelamento[0]}x de ${installmentPriceFormatted}`;
 
-  buttonElement.classList.add('btn', 'btn-buy');
-  buttonElement.textContent = 'Comprar';
+  buttonBuy.classList.add('btn', 'btn-buy');
+  buttonBuy.textContent = 'Comprar';
+  buttonBuy.addEventListener('click', handleBasket)
+  
 
   cardElement.appendChild(imgElement);
   cardElement.appendChild(titleElement);
   cardElement.appendChild(priceElement);
   cardElement.appendChild(installmentElement);
-  cardElement.appendChild(buttonElement);
+  cardElement.appendChild(buttonBuy);
 
   cardContainer.appendChild(cardElement);
 }
@@ -91,7 +142,8 @@ function toggleOrderBy() {
   
   const selectOrder = document.querySelector('.select-order');
   const arrowElement = orderByButton.querySelector('.arrow');
-
+  
+  document.body.style.overflow = 'visible'
   selectOrder.classList.remove('-active')
   orderBySelectOptions.classList.toggle('-active')
   arrowElement.classList.toggle('-active');
@@ -125,15 +177,18 @@ orderByButton.addEventListener('click', () => {
 });
 
 filterButton.addEventListener('click', () => {
+  document.body.style.overflow = 'hidden'
   const filtersContainer = document.querySelector('.filters-container');
   filtersContainer.classList.toggle('-active')
 
   closeFilterButton.addEventListener('click', () => {
+    document.body.style.overflow = 'visible'
     filtersContainer.classList.remove('-active')
   })
 });
 
 orderButton.addEventListener('click', () => {
+  document.body.style.overflow = 'hidden'
   const selectOrder = document.querySelector('.select-order');
   const selectOptions = document.querySelector('.select-options');
 
@@ -141,20 +196,15 @@ orderButton.addEventListener('click', () => {
   selectOptions.classList.toggle('-active')
 
   closeOrderButton.addEventListener('click', () => {
+    document.body.style.overflow = 'visible'
     selectOrder.classList.remove('-active')
     selectOptions.classList.remove('-active')
   })
 
 });
 
-
 function setInputsEventListener(input, handleFunction) {
   input.addEventListener('click', handleFunction)
-}
-
-function allInputChecked() {
-  const inputs = getAllInputs();
-  const filters = [];
 }
 
 function allCheckedInputs() {
@@ -181,6 +231,15 @@ function allInput() {
     setInputsEventListener(input, loadFiltered)
   })
 }
+
+cleanButton.addEventListener('click', () => {
+  
+  getAllInputs().forEach(input => {
+    input.checked = false;
+    loadFiltered()
+    priceFilter = {}
+  });
+})
 
 function loadFiltered() {
   const filters = allCheckedInputs()
@@ -304,13 +363,14 @@ function loadProducts() {
       renderedElements.push(allProducts[count]);
       products.push(allProducts[count])
     }
-
     productsToRender = [...products];
     globalFilteredProducts = productsToRender;
     displayProducts(products);
+    loadFiltered();
   })
 }
 
 loadProducts();
 allInput()
 orderByOptions()
+};

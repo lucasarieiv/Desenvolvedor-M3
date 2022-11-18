@@ -499,12 +499,21 @@
           margin-bottom: 30px;
 
           h2 {
+            position: relative;
+            display: block;
             font-size: 1.375rem;
 
             .toggle-filters {
               position: absolute;
               text-indent: -9999px;
               right: 26px;
+              width: 20px;
+              height: 10px;
+              top: 50%;
+              transform: translateY(-50%);
+              transition: transform 200ms;
+              transform-origin: left;
+              pointer-events: none;
   
               &::after,
               &::before {
@@ -524,6 +533,10 @@
   
               &::before {
                 transform: rotate(32deg);
+              }
+
+              &.-active {
+                transform: rotate(180deg);
               }
             }
           }

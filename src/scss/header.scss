@@ -14,18 +14,28 @@
 
 .shop {
   position: relative;
+  cursor: pointer;
 
   .badge {
+    box-sizing: border-box;
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     background: var(--blue);
     color: #fff;
     border-radius: 50%;
-    font-size: 10px;
+    font-size: 8px;
+    font-weight: 700;
     text-align: center;
     line-height: 12px;
-    bottom: 0;
+    opacity: 0;
+    bottom: 80%;
     left: 50%;
+    transition: opacity 600ms, bottom 600ms;
+
+    &.-active {
+      opacity: 1;
+      bottom: 0;
+    }
   }
 }
