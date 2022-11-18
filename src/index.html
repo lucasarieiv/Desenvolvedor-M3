@@ -34,9 +34,9 @@
       <h1 class="title">Blusas</h1>
 
       <div class="filter-options">
-        <h2 class="title-filter">Filtrar</h2>
+        <h2 class="title-filter" id="btn_filter">Filtrar</h2>
         
-        <h2 class="title-order">Ordenar</h2>
+        <h2 class="title-order" id="btn_order">Ordenar</h2>
 
         <div class="select-order">
   
@@ -50,7 +50,7 @@
             </div>
   
             <div class="select-options">
-              <h2 class="options-title">Ordernar <span>X</span></h2>
+              <h2 class="options-title">Ordernar <span class="close close-order">X</span></h2>
               <ul>
                 <li class="option" data-value="recent">Mas recentes</li>
                 <li class="option" data-value="lowestPrice">Menor preço</li>
@@ -155,7 +155,7 @@
               </label>
 
               <label class="check-container" for="U36">
-                <input class="sizes-filter" type="checkbox" data-size="u" data-value="36" id="U36">
+                <input class="sizes-filter" type="checkbox" data-size="36" id="U36">
                 <p class="text-size">36</p>
                 <span class="checkmark"></span>
               </label>
@@ -170,13 +170,13 @@
               </label>
 
               <label class="check-container" for="M36">
-                <input class="sizes-filter" type="checkbox" data-size="m" data-value="36" id="M36">
+                <input class="sizes-filter" type="checkbox" data-size="36" id="M36">
                 <p class="text-size">36</p>
                 <span class="checkmark"></span>
               </label>
 
               <label class="check-container" for="M38">
-                <input class="sizes-filter" type="checkbox" data-size="m" data-value="38" id="M38">
+                <input class="sizes-filter" type="checkbox" data-size="38" id="M38">
                 <p class="text-size">38</p>
                 <span class="checkmark"></span>
               </label>
@@ -191,13 +191,13 @@
               </label>
 
               <label class="check-container" for="G38">
-                <input class="sizes-filter" type="checkbox" data-size="g" data-value="38" id="G38">
+                <input class="sizes-filter" type="checkbox" data-size="38" id="G38">
                 <p class="text-size">38</p>
                 <span class="checkmark"></span>
               </label>
 
               <label class="check-container" for="G40">
-                <input class="sizes-filter" type="checkbox" data-size="g" data-value="40" id="G40">
+                <input class="sizes-filter" type="checkbox" data-size="40" id="G40">
                 <p class="text-size">40</p>
                 <span class="checkmark"></span>
               </label>
@@ -211,7 +211,7 @@
               </label>
 
               <label class="check-container" for="GG40">
-                <input class="sizes-filter" type="checkbox" data-size="gg" data-value="40" id="GG40">
+                <input class="sizes-filter" type="checkbox" data-size="40" id="GG40">
                 <p class="text-size">40</p>
                 <span class="checkmark"></span>
               </label>
@@ -227,31 +227,31 @@
           <div class="price-container">
             <label class="container" for="50">
               <p>de R$ 0 até R$ 50</p>
-              <input type="checkbox" data-minPrice="0" data-maxPrice="50" id="50">
+              <input name="price" type="radio" data-minPrice="0" data-maxPrice="50" id="50">
               <span class="checkmark"></span>
             </label>
 
             <label class="container" for="150">
               <p>de R$ 51 até R$ 150</p>
-              <input type="checkbox" data-minPrice="51" data-maxPrice="150" id="150">
+              <input name="price" type="radio" data-minPrice="51" data-maxPrice="150" id="150">
               <span class="checkmark"></span>
             </label>
 
             <label class="container" for="300">
               <p>de R$ 151 até R$ 300</p>
-              <input type="checkbox" data-minPrice="151" data-maxPrice="300" id="300">
+              <input name="price" type="radio" data-minPrice="151" data-maxPrice="300" id="300">
               <span class="checkmark"></span>
             </label>
             
             <label class="container" for="500">
               <p>de R$ 301 até R$ 500</p>
-              <input type="checkbox" data-minPrice="151" data-maxPrice="500" id="500">
+              <input name="price" type="radio" data-minPrice="151" data-maxPrice="500" id="500">
               <span class="checkmark"></span>
             </label>
             
-            <label class="container" for="500-more">
+            <label class="container" for="501">
               <p>a partir de R$ 500</p>
-              <input type="checkbox" data-minPrice="500" id="500-more">
+              <input name="price" type="radio" data-minPrice="501" data-maxPrice="+" id="501">
               <span class="checkmark"></span>
             </label>
             
@@ -284,7 +284,7 @@
       </section>
     </div>
   </main>
-
+  
   <footer class="m3-footer">
     <p>M3: Implantação de E-commerce VTEX</p>
   </footer>

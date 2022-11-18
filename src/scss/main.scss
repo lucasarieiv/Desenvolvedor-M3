@@ -9,6 +9,10 @@
   color: #fff;
   text-align: center;
   text-transform: uppercase;
+
+  &.-hide {
+    display: none;
+  }
 }
 
 .btn-buy {
@@ -26,6 +30,7 @@
   margin: 0 auto;
   padding: 0 16px;
   max-width: 1176px;
+  margin-bottom: 60px;
 
   .header-filter {
     margin: 54px 0;
@@ -404,17 +409,20 @@
                   position: absolute;
                   text-indent: -9999px;
                   right: 26px;
-  
+                  width: 40px;
+                  right: 8px;
+                  
                   &::after,
                   &::before {
                     content: '';
                     position: absolute;
                     top: 0;
-                    left: 0;
+                    left: 50%;
                     width: 2px;
                     height: 26px;
                     background: var(--gray-500);
                     transform-origin: center;
+                    transform: translate(50%, 50%);
                   }
   
                   &::after {
@@ -447,6 +455,7 @@
         background: #fff;
 
         .filters-title {
+          position: relative;
           padding: 16px;
           display: block;
           font-size: 1.75rem;
@@ -455,22 +464,24 @@
           border-bottom: 1px solid var(--gray-500);
 
           .close-filters {
+            cursor: pointer;
             position: absolute;
             text-indent: -9999px;
-            right: 26px;
-            cursor: pointer;
+            width: 40px;
+            height: 26px;
+            right: 8px;
             
-
             &::after,
             &::before {
               content: '';
               position: absolute;
               top: 0;
-              left: 0;
+              left: 50%;
               width: 2px;
               height: 26px;
               background: var(--gray-500);
               transform-origin: center;
+              transform: translate(50%, 50%);
             }
 
             &::after {
